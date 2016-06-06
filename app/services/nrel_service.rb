@@ -8,7 +8,7 @@ class NrelService
   end
 
   def search_nearest(zip_code, distance)
-    @conn.get 'nearest.json', { location: zip_code, fuel_type: "LPG,ELEC", api_key: ENV['NREL_API_KEY'] }
+    @conn.get 'nearest.json', { location: zip_code, fuel_type: "LPG,ELEC", api_key: ENV['NREL_API_KEY'], limit: "10", radius: distance }
   end
 
   def parse_json(response)
