@@ -13,7 +13,7 @@ RSpec.feature "User can search for fuel stations by zip code" do
     it "displays the 10 closest stations within 6 miles" do
       visit root_path
 
-      fill_in "Zip Code", with: "80203"
+      fill_in :q, with: "80203"
       click_button "Locate"
 
       within(".station-66897") do
