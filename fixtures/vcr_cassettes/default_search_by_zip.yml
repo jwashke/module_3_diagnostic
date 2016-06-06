@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=zie1A7NWLQhQ4aAhO9zqrHL5aF8LznsVBwKJGGwt&fuel_type=LPG,ELEC&limit=10&location=80203&radius
+    uri: http://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=zie1A7NWLQhQ4aAhO9zqrHL5aF8LznsVBwKJGGwt&fuel_type=LPG,ELEC&limit=10&location=80203&offset&radius=miles%20(optional)
     body:
       encoding: US-ASCII
       string: ''
@@ -27,9 +27,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 06 Jun 2016 15:59:55 GMT
+      - Mon, 06 Jun 2016 16:35:09 GMT
       Last-Modified:
-      - Mon, 06 Jun 2016 15:59:55 GMT
+      - Mon, 06 Jun 2016 16:35:09 GMT
       Server:
       - openresty
       Vary:
@@ -43,11 +43,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '993'
+      - '987'
       X-Request-Id:
-      - aaeedb0f-f043-42a7-add7-0af87013d820
+      - 871b3f00-6d59-4809-9207-ae406456932d
       X-Runtime:
-      - '0.011398'
+      - '0.011084'
       Transfer-Encoding:
       - chunked
       Connection:
@@ -96,5 +96,5 @@ http_interactions:
         Colorado Convention Center, level 2","plus4":null,"state":"CO","street_address":"650
         15th St","zip":"80202","bd_blends":null,"e85_blender_pump":null,"ev_connector_types":["NEMA520"],"ev_dc_fast_num":null,"ev_level1_evse_num":4,"ev_level2_evse_num":null,"ev_network":null,"ev_network_web":null,"ev_other_evse":null,"hy_status_link":null,"lpg_primary":null,"ng_fill_type_code":null,"ng_psi":null,"ng_vehicle_class":null,"distance":1.03475}]}'
     http_version: 
-  recorded_at: Mon, 06 Jun 2016 15:59:54 GMT
+  recorded_at: Mon, 06 Jun 2016 16:35:08 GMT
 recorded_with: VCR 3.0.3

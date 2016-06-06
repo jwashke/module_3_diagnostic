@@ -33,7 +33,7 @@ RSpec.feature "User can search for fuel stations by zip code" do
       VCR.use_cassette "5 mile search by zip" do
         visit root_path
 
-        within(".search") do
+        within(".navbar") do
           fill_in :q, with: "80203"
           fill_in :r, with: "5"
           click_button "Locate"

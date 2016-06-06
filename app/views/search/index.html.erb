@@ -7,3 +7,7 @@
     <p>Distance: <%= station.distance %> miles</p>
   </div>
 <% end %>
+
+<% @pages.times do |n| %>
+  <%= link_to n + 2, search_path %>
+<% end %>

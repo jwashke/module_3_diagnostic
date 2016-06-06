@@ -1,6 +1,6 @@
 class Station
   attr_reader :id, :name, :address, :fuel_type, :distance, :access_times
-  
+
   def initialize(station)
     @id           = station["id"]
     @name         = station["station_name"]
@@ -10,10 +10,12 @@ class Station
     @access_times = station["access_days_time"]
   end
 
-  def self.get_stations(zip_code, distance = 6)
-    response = NrelService.new.search_by_zip(zip_code, distance)
-    response["fuel_stations"].map do |station|
+  def self.get_stations(zip_code, distance = 6, offset = 0)
+    response = NrelService.new.search_by_zip(zip_code, distance, offset)
+    pages = response["total_results"] / 10
+    stations = response["fuel_stations"].map do |station|
       Station.new(station)
     end
+    [pages, stations]
   end
 end
