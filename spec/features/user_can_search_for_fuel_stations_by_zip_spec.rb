@@ -11,16 +11,18 @@ require "rails_helper"
 RSpec.feature "User can search for fuel stations by zip code" do
   context "default distance field" do
     it "displays the 10 closest stations within 6 miles" do
-      visit root_path
+      VCR.use_cassette "default search by zip" do
+        visit root_path
 
-      fill_in :q, with: "80203"
-      click_button "Locate"
+        fill_in :q, with: "80203"
+        click_button "Locate"
 
-      within(".station-66897") do
-        expect(page).to have_content?("UDR")
-        expect(page).to have_content?("800 Acoma St Denver CO 80204")
-        expect(page).to have_content?("0.31 miles")
-        expect(page).to have_content?("Access Times: 24 hours daily")
+        within(".station-66897") do
+          expect(page).to have_content?("UDR")
+          expect(page).to have_content?("800 Acoma St Denver CO 80204")
+          expect(page).to have_content?("0.31 miles")
+          expect(page).to have_content?("Access Times: 24 hours daily")
+        end
       end
     end
   end
