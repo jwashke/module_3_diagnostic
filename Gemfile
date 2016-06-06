@@ -16,7 +16,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'vcr'
   gem 'factory_girl'
   gem 'figaro'
   gem 'faraday'
