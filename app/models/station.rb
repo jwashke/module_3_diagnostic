@@ -1,4 +1,6 @@
 class Station
+  attr_reader :id, :name, :address, :fuel_type, :distance, :access_times
+  
   def initialize(station)
     @id           = station["id"]
     @name         = station["station_name"]
@@ -6,7 +8,6 @@ class Station
     @fuel_type    = station["fuel_type_code"]
     @distance     = station["distance"]
     @access_times = station["access_days_time"]
-    byebug
   end
 
   def self.get_stations(zip_code, distance = 6)
